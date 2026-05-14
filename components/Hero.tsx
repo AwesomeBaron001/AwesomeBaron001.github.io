@@ -68,6 +68,14 @@ export function Hero() {
             GitHub
           </a>
           <a
+            href="https://blog.csdn.net/m0_46464899"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-text-secondary transition-colors duration-300 hover:text-accent"
+          >
+            Blog
+          </a>
+          <a
             href="#contact"
             className="text-sm text-text-secondary transition-colors duration-300 hover:text-accent"
           >
