@@ -28,7 +28,7 @@ export interface BuildLogEntry {
 export interface Social {
   platform: string;
   url: string;
-  icon: "Github" | "Mail" | "Twitter";
+  icon: "Github" | "Mail" | "Twitter" | "Globe";
 }
 
 export const siteConfig: SiteConfig = {
@@ -105,6 +105,11 @@ export const socials: Social[] = [
     platform: "GitHub",
     url: "https://github.com/AwesomeBaron001",
     icon: "Github",
+  },
+  {
+    platform: "CSDN",
+    url: "https://blog.csdn.net/m0_46464899",
+    icon: "Globe",
   },
   {
     platform: "Email",

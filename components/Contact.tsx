@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Mail, Twitter } from "lucide-react";
+import { Github, Mail, Twitter, Globe } from "lucide-react";
 import { socials } from "@/data/content";
 
 const fadeUp = {
@@ -17,6 +17,7 @@ const iconMap = {
   Github,
   Mail,
   Twitter,
+  Globe,
 } as const;
 
 export function Contact() {
