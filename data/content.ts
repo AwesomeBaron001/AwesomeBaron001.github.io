@@ -42,7 +42,7 @@ export const siteConfig: SiteConfig = {
 export const navLinks: NavLink[] = [
   { label: "关于", href: "#about" },
   { label: "项目", href: "#projects" },
-  { label: "博客", href: "#blog" },
+  { label: "博客", href: "https://blog.csdn.net/m0_46464899" },
   { label: "Build Log", href: "#buildlog" },
   { label: "联系", href: "#contact" },
 ];

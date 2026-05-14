@@ -22,6 +22,7 @@ export function Nav() {
               <a
                 href={link.href}
                 className="text-sm text-text-secondary hover:text-accent"
+                {...(link.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
               >
                 {link.label}
               </a>
