@@ -64,12 +64,11 @@ export function About() {
           viewport={{ once: true, margin: "-100px" }}
           custom={2}
         >
-          <div
-            className="flex h-28 w-28 items-center justify-center rounded-full bg-text-secondary/10 text-sm text-text-secondary"
-            aria-label={`${siteConfig.name} 的头像`}
-          >
-            头像
-          </div>
+          <img
+            src="/avatar.png"
+            alt={`${siteConfig.name} 的头像`}
+            className="h-28 w-28 rounded-full object-cover"
+          />
         </motion.div>
       </div>
     </section>
