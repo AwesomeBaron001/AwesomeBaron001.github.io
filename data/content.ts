@@ -35,8 +35,8 @@ export const siteConfig: SiteConfig = {
   name: "YOLO",
   title: "CS Grad Student · AI Builder · Hackathon Prototyper",
   subtitle:
-    "Building fast, useful prototypes across AI tools, Obsidian plugins, and robot demos.",
-  description: "YOLO's personal site — hackathon projects, experiments, and build notes.",
+    "Building hackathon prototypes across robot control and reading tools.",
+  description: "YOLO's personal site — focused notes on 6gogo_scout_mini and Knowater.",
 };
 
 export const navLinks: NavLink[] = [
@@ -48,7 +48,7 @@ export const navLinks: NavLink[] = [
 ];
 
 export const aboutText: string =
-  "计算机研究生，喜欢把模糊想法快速做成可运行的原型，再继续打磨成能讲清楚、能演示、能交付的作品。最近的项目集中在 AI 工具、Obsidian 阅读工作流和机器人控制 demo。";
+  "计算机研究生，喜欢把模糊想法快速做成可运行的原型，再继续打磨成能讲清楚、能演示、能交付的作品。这里主要记录两个黑客松项目：Scout Mini 机器狗控制 demo，以及 Obsidian 阅读续航插件 Knowater。";
 
 export const focuses: string[] = [
   "Hackathon Prototypes",
@@ -73,13 +73,6 @@ export const projects: Project[] = [
     url: "https://github.com/AwesomeBaron001/Knowater",
     tech: ["TypeScript", "Obsidian API", "Markdown"],
   },
-  {
-    name: "Personal Site",
-    description: "基于 Next.js 的个人作品集和 Build Log，用来持续展示项目进展与技术实验。",
-    year: "2026",
-    url: "https://github.com/AwesomeBaron001/AwesomeBaron001.github.io",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
 ];
 
 export const buildLog: BuildLogEntry[] = [
@@ -94,12 +87,6 @@ export const buildLog: BuildLogEntry[] = [
     title: "Knowater 阅读续航插件",
     description: "在黑客松中做出 Obsidian 插件 MVP，把微信读书划线转成 dashboard、recovery card 和阅读 session 快照。",
     link: "https://github.com/AwesomeBaron001/Knowater",
-  },
-  {
-    date: "2026-05",
-    title: "个人网站上线",
-    description: "搭建基于 Next.js 的作品集主页，配置 GitHub Pages 部署，并开始把项目进展集中展示出来。",
-    link: "https://github.com/AwesomeBaron001/AwesomeBaron001.github.io",
   },
 ];
 
