@@ -118,11 +118,13 @@ export function Projects() {
               <div className="min-w-0">
                 {project.visual.image ? (
                   <figure>
-                    <img
-                      src={project.visual.image}
-                      alt={project.visual.title}
-                      className="aspect-[4/3] w-full rounded border border-text-primary/10 object-cover"
-                    />
+                    <div className="max-h-[520px] overflow-auto rounded border border-text-primary/10 bg-white/60">
+                      <img
+                        src={project.visual.image}
+                        alt={project.visual.title}
+                        className="w-full object-contain"
+                      />
+                    </div>
                     <figcaption className="mt-2 text-xs text-text-secondary">
                       {project.visual.caption}
                     </figcaption>

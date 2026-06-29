@@ -103,7 +103,8 @@ export const projects: Project[] = [
     ],
     visual: {
       title: "获奖证书",
-      caption: "证书图片补充后会放在这里展示。",
+      caption: "6gogo_scout_mini 黑客松获奖证书。",
+      image: "/scout.png",
     },
   },
   {
@@ -128,7 +129,8 @@ export const projects: Project[] = [
     ],
     visual: {
       title: "项目介绍图",
-      caption: "介绍图片补充后会放在这里展示。",
+      caption: "Knowater 项目介绍图。",
+      image: "/knowater.png",
     },
   },
 ];
