@@ -60,7 +60,7 @@ export const navLinks: NavLink[] = [
 ];
 
 export const aboutText: string =
-  "计算机研究生，喜欢把模糊想法快速做成可运行的原型，再继续打磨成能讲清楚、能演示、能交付的作品。这里主要记录两个黑客松项目：Scout Mini 机器狗控制 demo，以及 Obsidian 阅读续航插件 Knowater。";
+  "计算机研究生，喜欢把模糊想法快速做成可运行的原型，再继续打磨成能讲清楚、能演示、能交付的作品。";
 
 export const focuses: string[] = [
   "Hackathon Prototypes",
