@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Award, BookOpen, Github, Image, Play } from "lucide-react";
 import { projects } from "@/data/content";
 
 const fadeUp = {
@@ -13,66 +13,141 @@ const fadeUp = {
   }),
 };
 
+const linkIcons = {
+  video: Play,
+  article: BookOpen,
+  repo: Github,
+};
+
 export function Projects() {
   return (
     <section id="projects" className="px-6 py-24">
-      <div className="mx-auto max-w-content">
-        <motion.h2
-          className="text-2xl font-serif font-semibold text-text-primary"
+      <div className="mx-auto max-w-5xl">
+        <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           custom={0}
         >
-          项目
-        </motion.h2>
+          <h2 className="text-2xl font-serif font-semibold text-text-primary">
+            项目
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary">
+            目前重点展示两个黑客松项目：一个把 Scout Mini 机器狗变成可演示的“遛宝宝”机器人，另一个把微信读书笔记转成 Obsidian 里的阅读续航工具。
+          </p>
+        </motion.div>
 
-        <ul className="mt-10 divide-y divide-text-primary/5">
+        <div className="mt-10 space-y-10">
           {projects.map((project, i) => (
-            <motion.li
+            <motion.article
               key={project.name}
+              className="grid gap-6 border-t border-text-primary/10 pt-8 md:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] md:gap-10"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               custom={i + 1}
             >
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-start justify-between gap-4 py-5 transition-transform duration-300"
-              >
-                <div className="min-w-0">
-                  <span className="font-serif font-medium text-text-primary transition-all duration-300 group-hover:-translate-x-1 group-hover:text-accent inline-block">
-                    {project.name}
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="font-serif text-2xl font-semibold text-text-primary">
+                    {project.shortName}
                   </span>
-                  <p className="mt-1 text-sm text-text-secondary">
-                    {project.description}
-                  </p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {project.tech.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded px-1.5 py-0.5 text-xs text-text-secondary bg-text-primary/5"
+                  <span className="rounded-full border border-text-primary/10 px-2.5 py-1 text-xs font-sans text-text-secondary">
+                    {project.year}
+                  </span>
+                </div>
+
+                <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                  {project.description}
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-1.5">
+                  {project.tech.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded px-1.5 py-0.5 text-xs text-text-secondary bg-text-primary/5"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <ul className="mt-6 space-y-2">
+                  {project.status.map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-2 text-sm leading-relaxed text-text-secondary"
+                    >
+                      <Award
+                        size={15}
+                        className="mt-0.5 shrink-0 text-accent"
+                        aria-hidden="true"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-7 flex flex-wrap gap-3">
+                  {project.links.map((link) => {
+                    const Icon = linkIcons[link.kind];
+
+                    return (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex max-w-full items-center gap-2 rounded border border-text-primary/10 px-3 py-2 text-sm text-text-primary transition-colors duration-300 hover:border-accent/50 hover:text-accent"
                       >
-                        {tag}
+                        <Icon size={15} className="shrink-0" aria-hidden="true" />
+                        <span className="truncate">{link.label}</span>
+                        <ArrowUpRight
+                          size={14}
+                          className="shrink-0"
+                          aria-hidden="true"
+                        />
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="min-w-0">
+                {project.visual.image ? (
+                  <figure>
+                    <img
+                      src={project.visual.image}
+                      alt={project.visual.title}
+                      className="aspect-[4/3] w-full rounded border border-text-primary/10 object-cover"
+                    />
+                    <figcaption className="mt-2 text-xs text-text-secondary">
+                      {project.visual.caption}
+                    </figcaption>
+                  </figure>
+                ) : (
+                  <div className="flex aspect-[4/3] w-full flex-col justify-between rounded border border-dashed border-text-primary/20 bg-text-primary/[0.02] p-5">
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="font-serif text-lg font-medium text-text-primary">
+                        {project.visual.title}
                       </span>
-                    ))}
+                      <Image
+                        size={22}
+                        className="shrink-0 text-text-secondary"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <p className="text-sm leading-relaxed text-text-secondary">
+                      {project.visual.caption}
+                    </p>
                   </div>
-                </div>
-                <div className="flex shrink-0 items-center gap-3 text-sm text-text-secondary pt-0.5">
-                  <span className="hidden sm:inline">{project.year}</span>
-                  <ArrowUpRight
-                    size={16}
-                    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
-                  />
-                </div>
-              </a>
-            </motion.li>
+                )}
+              </div>
+            </motion.article>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

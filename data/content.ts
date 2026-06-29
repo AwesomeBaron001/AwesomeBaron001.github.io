@@ -12,10 +12,22 @@ export interface NavLink {
 
 export interface Project {
   name: string;
+  shortName: string;
   description: string;
   year: string;
   url: string;
   tech: string[];
+  status: string[];
+  links: {
+    label: string;
+    href: string;
+    kind: "video" | "article" | "repo";
+  }[];
+  visual: {
+    title: string;
+    caption: string;
+    image?: string;
+  };
 }
 
 export interface BuildLogEntry {
@@ -61,17 +73,63 @@ export const focuses: string[] = [
 export const projects: Project[] = [
   {
     name: "6gogo_scout_mini",
-    description: "黑客松获奖项目：用 ROS 2 控制 Scout Mini 机器狗，提供路线预设、状态回传和浏览器控制界面。",
+    shortName: "6gogo",
+    description:
+      "黑客松获奖项目：用 ROS 2 控制 Scout Mini 机器狗，提供路线预设、状态回传和浏览器控制界面，把“遛宝宝”的想法做成可运行演示。",
     year: "2026",
     url: "https://github.com/AwesomeBaron001/6gogo_scout_mini",
     tech: ["ROS 2 Jazzy", "Python", "rosbridge", "Web UI"],
+    status: [
+      "黑客松获奖项目",
+      "入围通往 AGI 之路 x 红杉中国 AGI HOUSE 线上孵化营",
+      "深圳科创学院夏令营已通过一面，二面进行中",
+    ],
+    links: [
+      {
+        label: "B站视频：《我做了一个“遛宝宝”的机器人》",
+        href: "https://b23.tv/a9krkLz",
+        kind: "video",
+      },
+      {
+        label: "AGI HOUSE 线上孵化营入围信息",
+        href: "https://mp.weixin.qq.com/s/2Knca6GSu-PsHtMc3gMLiwW",
+        kind: "article",
+      },
+      {
+        label: "GitHub 仓库",
+        href: "https://github.com/AwesomeBaron001/6gogo_scout_mini",
+        kind: "repo",
+      },
+    ],
+    visual: {
+      title: "获奖证书",
+      caption: "证书图片补充后会放在这里展示。",
+    },
   },
   {
     name: "Knowater / Weread Memory",
-    description: "黑客松作品：面向 Obsidian 的微信读书理解续航插件，生成阅读驾驶舱、续读回顾卡和 session 快照。",
+    shortName: "Knowater",
+    description:
+      "黑客松作品：面向 Obsidian 的微信读书理解续航插件，生成阅读驾驶舱、续读回顾卡和 session 快照，让中断后的阅读更容易恢复上下文。",
     year: "2026",
     url: "https://github.com/AwesomeBaron001/Knowater",
     tech: ["TypeScript", "Obsidian API", "Markdown"],
+    status: [
+      "Obsidian 插件 MVP",
+      "围绕微信读书划线和笔记做理解加工",
+      "支持 dashboard、recovery card、reading session 三条核心命令",
+    ],
+    links: [
+      {
+        label: "GitHub 仓库",
+        href: "https://github.com/AwesomeBaron001/Knowater",
+        kind: "repo",
+      },
+    ],
+    visual: {
+      title: "项目介绍图",
+      caption: "介绍图片补充后会放在这里展示。",
+    },
   },
 ];
 
