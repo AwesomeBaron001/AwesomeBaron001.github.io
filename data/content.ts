@@ -33,10 +33,10 @@ export interface Social {
 
 export const siteConfig: SiteConfig = {
   name: "YOLO",
-  title: "Builder · AI Explorer · Vibe Coder",
+  title: "CS Grad Student · AI Builder · Hackathon Prototyper",
   subtitle:
-    "Vibe coding in public. Building AI-powered tools and small products with Python, LangGraph, and curiosity.",
-  description: "YOLO's personal site — experiments, projects, and building in public.",
+    "Building fast, useful prototypes across AI tools, Obsidian plugins, and robot demos.",
+  description: "YOLO's personal site — hackathon projects, experiments, and build notes.",
 };
 
 export const navLinks: NavLink[] = [
@@ -48,56 +48,58 @@ export const navLinks: NavLink[] = [
 ];
 
 export const aboutText: string =
-  "计算机研究生，正在通过 vibe coding 把想法快速变成可用原型。不追求完美，追求持续交付。每个实验都是一次学习，每个原型都是下一个项目的起点。";
+  "计算机研究生，喜欢把模糊想法快速做成可运行的原型，再继续打磨成能讲清楚、能演示、能交付的作品。最近的项目集中在 AI 工具、Obsidian 阅读工作流和机器人控制 demo。";
 
 export const focuses: string[] = [
-  "AI Agents & Multi-step Workflows",
-  "LangGraph / LangChain",
-  "Python Tooling",
-  "Rapid Prototyping",
-  "Building in Public",
+  "Hackathon Prototypes",
+  "AI-assisted Product Building",
+  "ROS 2 / Robot Interfaces",
+  "Obsidian Plugin Development",
+  "Reading & Knowledge Tools",
 ];
 
 export const projects: Project[] = [
   {
-    name: "LangGraph Agent Experiment",
-    description: "探索多步骤 AI 工作流，用 LangGraph 构建可复用的 Agent 节点与条件分支。",
+    name: "6gogo_scout_mini",
+    description: "黑客松获奖项目：用 ROS 2 控制 Scout Mini 机器狗，提供路线预设、状态回传和浏览器控制界面。",
     year: "2026",
-    url: "https://github.com/AwesomeBaron001",
-    tech: ["Python", "LangGraph", "LangChain"],
+    url: "https://github.com/AwesomeBaron001/6gogo_scout_mini",
+    tech: ["ROS 2 Jazzy", "Python", "rosbridge", "Web UI"],
+  },
+  {
+    name: "Knowater / Weread Memory",
+    description: "黑客松作品：面向 Obsidian 的微信读书理解续航插件，生成阅读驾驶舱、续读回顾卡和 session 快照。",
+    year: "2026",
+    url: "https://github.com/AwesomeBaron001/Knowater",
+    tech: ["TypeScript", "Obsidian API", "Markdown"],
   },
   {
     name: "Personal Site",
-    description: "基于 Next.js 构建的作品集主页，部署到 GitHub Pages，持续迭代中。",
+    description: "基于 Next.js 的个人作品集和 Build Log，用来持续展示项目进展与技术实验。",
     year: "2026",
     url: "https://github.com/AwesomeBaron001/AwesomeBaron001.github.io",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    name: "Coming Soon",
-    description: "正在构建新的实验。关注 GitHub 以获取最新进展。",
-    year: "2026",
-    url: "https://github.com/AwesomeBaron001",
-    tech: ["Python", "AI"],
   },
 ];
 
 export const buildLog: BuildLogEntry[] = [
   {
+    date: "2026-06",
+    title: "6gogo_scout_mini 黑客松获奖",
+    description: "完成 Scout Mini 机器狗遛狗 demo：ROS 2 控制节点、rosbridge 通信、Web 控制台和真实机器人运行边界。",
+    link: "https://github.com/AwesomeBaron001/6gogo_scout_mini",
+  },
+  {
+    date: "2026-06",
+    title: "Knowater 阅读续航插件",
+    description: "在黑客松中做出 Obsidian 插件 MVP，把微信读书划线转成 dashboard、recovery card 和阅读 session 快照。",
+    link: "https://github.com/AwesomeBaron001/Knowater",
+  },
+  {
     date: "2026-05",
     title: "个人网站上线",
-    description: "搭建基于 Next.js 的作品集主页，配置 GitHub Actions 自动部署到 GitHub Pages。",
+    description: "搭建基于 Next.js 的作品集主页，配置 GitHub Pages 部署，并开始把项目进展集中展示出来。",
     link: "https://github.com/AwesomeBaron001/AwesomeBaron001.github.io",
-  },
-  {
-    date: "2026-04",
-    title: "LangGraph 工作流实验",
-    description: "探索多 Agent 协作模式，研究如何用 LangGraph 构建条件分支和循环流程。",
-  },
-  {
-    date: "2026-03",
-    title: "开始 Vibe Coding",
-    description: "确立构建方式：想法 → 原型 → 迭代。开始用 AI 工具加速从零到可运行的速度。",
   },
 ];
 
