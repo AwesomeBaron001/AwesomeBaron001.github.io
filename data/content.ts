@@ -75,7 +75,7 @@ export const projects: Project[] = [
     name: "6gogo_scout_mini",
     shortName: "6gogo",
     description:
-      "黑客松获奖项目：用 ROS 2 控制 Scout Mini 机器狗，提供路线预设、状态回传和浏览器控制界面，把“遛宝宝”的想法做成可运行演示。",
+      "黑客松获奖项目：基于松灵底盘机器人 Scout Mini 做无人遛狗原型，用 ROS 2 串联路线预设、状态回传和浏览器控制界面。",
     year: "2026",
     url: "https://github.com/AwesomeBaron001/6gogo_scout_mini",
     tech: ["ROS 2 Jazzy", "Python", "rosbridge", "Web UI"],
@@ -139,7 +139,7 @@ export const buildLog: BuildLogEntry[] = [
   {
     date: "2026-06",
     title: "6gogo_scout_mini 黑客松获奖",
-    description: "完成 Scout Mini 机器狗遛狗 demo：ROS 2 控制节点、rosbridge 通信、Web 控制台和真实机器人运行边界。",
+    description: "完成基于松灵 Scout Mini 底盘机器人的无人遛狗 demo：ROS 2 控制节点、rosbridge 通信、Web 控制台和真实机器人运行边界。",
     link: "https://github.com/AwesomeBaron001/6gogo_scout_mini",
   },
   {

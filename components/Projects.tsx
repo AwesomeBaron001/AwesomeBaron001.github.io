@@ -34,7 +34,7 @@ export function Projects() {
             项目
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary">
-            目前重点展示两个黑客松项目：一个把 Scout Mini 机器狗变成可演示的“遛宝宝”机器人，另一个把微信读书笔记转成 Obsidian 里的阅读续航工具。
+            目前重点展示两个黑客松项目：一个基于松灵 Scout Mini 底盘机器人探索无人遛狗，另一个把微信读书笔记转成 Obsidian 里的阅读续航工具。
           </p>
         </motion.div>
 
