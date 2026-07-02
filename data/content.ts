@@ -50,13 +50,13 @@ export const siteConfig: SiteConfig = {
   subtitle:
     "Building hackathon prototypes across robot control and reading tools.",
   description: "YOLO's personal site — focused notes on 6gogo_scout_mini and Knowater.",
-  portfolioUrl: "https://awesomebaron001.github.io/zuopinji/",
+  portfolioUrl: "https://awesomebaron001.github.io/portfolio/",
 };
 
 export const navLinks: NavLink[] = [
   { label: "关于", href: "#about" },
   { label: "项目", href: "#projects" },
-  { label: "作品集", href: "https://awesomebaron001.github.io/zuopinji/" },
+  { label: "作品集", href: "https://awesomebaron001.github.io/portfolio/" },
   { label: "博客", href: "https://blog.csdn.net/m0_46464899" },
   { label: "Build Log", href: "#buildlog" },
   { label: "联系", href: "#contact" },
