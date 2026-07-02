@@ -47,12 +47,20 @@ export function Hero() {
         </motion.p>
 
         <motion.div
-          className="mt-10 flex items-center justify-center gap-8"
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={3}
         >
+          <a
+            href={siteConfig.portfolioUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-text-primary underline decoration-accent underline-offset-4 transition-colors duration-300 hover:text-accent"
+          >
+            Robotics Portfolio
+          </a>
           <a
             href="#projects"
             className="text-sm text-text-secondary transition-colors duration-300 hover:text-accent"

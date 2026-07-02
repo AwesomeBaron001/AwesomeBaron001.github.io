@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight, Award, BookOpen, Github, Image, Play } from "lucide-react";
-import { projects } from "@/data/content";
+import { projects, siteConfig } from "@/data/content";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -38,6 +38,51 @@ export function Projects() {
           </p>
         </motion.div>
 
+        <motion.article
+          className="mt-10 grid gap-6 rounded border border-accent/30 bg-accent/[0.04] p-5 md:grid-cols-[minmax(0,1fr)_220px] md:items-center"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          custom={1}
+        >
+          <div>
+            <p className="text-xs font-sans tracking-widest text-accent uppercase">
+              Robotics Portfolio
+            </p>
+            <h3 className="mt-2 text-xl font-serif font-semibold text-text-primary">
+              面试官入口：机器人与 AI 系统作品集
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+              如果你想快速了解我的机器人方向能力，可以从这里查看 Scout Dog Walk、6gogo MVP、
+              AI Agent / RAG 项目、演示视频和简历下载。
+            </p>
+            <a
+              href={siteConfig.portfolioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded border border-accent/40 px-3 py-2 text-sm text-text-primary transition-colors duration-300 hover:border-accent hover:text-accent"
+            >
+              打开作品集
+              <ArrowUpRight size={14} aria-hidden="true" />
+            </a>
+          </div>
+
+          <a
+            href={siteConfig.portfolioUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block overflow-hidden rounded border border-text-primary/10 bg-white/60"
+            aria-label="打开机器人与 AI 系统作品集"
+          >
+            <img
+              src="/scout.png"
+              alt="Scout Mini 机器人项目图片"
+              className="h-44 w-full object-cover md:h-36"
+            />
+          </a>
+        </motion.article>
+
         <div className="mt-10 space-y-10">
           {projects.map((project, i) => (
             <motion.article
@@ -47,7 +92,7 @@ export function Projects() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              custom={i + 1}
+              custom={i + 2}
             >
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-3">

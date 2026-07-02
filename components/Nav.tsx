@@ -56,6 +56,7 @@ export function Nav() {
                     href={link.href}
                     className="text-sm text-text-secondary hover:text-accent"
                     onClick={() => setMobileOpen(false)}
+                    {...(link.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
                   >
                     {link.label}
                   </a>
