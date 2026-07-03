@@ -4,7 +4,7 @@ import { ArrowUpRight, Download, Mail, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "机器人与 AI 系统作品集｜赵红利",
-  description: "赵红利的机器人与 AI 系统作品集：ROS 2 实机机器人、智能遛狗机器人 MVP、AI Agent 与 RAG 项目。",
+  description: "赵红利的机器人与 AI 系统作品集：ROS 2 实机机器人、智能遛狗机器人 MVP、联想实习与 AI 系统项目。",
 };
 
 const roboticsProjects = [
@@ -40,21 +40,36 @@ const roboticsProjects = [
 const aiProjects = [
   {
     label: "Internship · Lenovo",
-    title: "FIFA AI Pro 多 Agent 数据分析系统",
+    title: "联想 FIFA AI Pro 数据分析项目",
     description:
-      "基于 LangGraph 的多 Agent 足球数据智能分析系统。负责 prompt optimization pipeline、data agent 执行链路优化、Text-to-SQL 语义解析和离线评测数据集。",
+      "在联想实习期间参与 FIFA AI Pro 相关数据分析系统建设，围绕足球赛事数据问答、分析链路和模型效果评估做工程落地。",
+    facts: [
+      "负责 prompt optimization pipeline，提升复杂问题下的回答稳定性和可控性。",
+      "优化 data agent 执行链路，参与 Text-to-SQL 语义解析与数据查询流程。",
+      "整理离线评测数据集，用可复现指标评估问答、查询和报告生成效果。",
+    ],
+    links: [
+      {
+        label: "联想官方介绍",
+        href: "https://mp.weixin.qq.com/s/lqnvTUSzjc7A_vy0UK_s5A",
+      },
+    ],
   },
   {
     label: "Enterprise RAG",
     title: "无人机技术文档智能检索",
     description:
       "参与 BM25 + 向量语义混合检索，独立搭建 OCR 与 CLIP 多模态索引。基于真实问答集做召回、覆盖度、BLEU / ROUGE 评测。",
+    facts: [],
+    links: [],
   },
   {
     label: "Agent Product",
     title: "Deep Research Agent",
     description:
       "使用 LangGraph 设计协调器、规划器、研究员、报告员多角色状态机，集成 Tavily、RAGFlow、MCP、React 与 FastAPI 完成研究报告自动化。",
+    facts: [],
+    links: [],
   },
 ];
 
@@ -70,7 +85,7 @@ export default function PortfolioPage() {
             机器人与 AI 系统作品集
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-text-secondary">
-            我是赵红利，计算机硕士，方向聚焦机器人软件、ROS 2 控制链路、AI Agent 与 RAG 系统。
+            我是赵红利，计算机硕士，方向聚焦机器人软件、ROS 2 控制链路、企业 AI 系统与智能检索工程。
             这个页面给面试官快速查看可运行项目、系统架构、我的职责和演示证据。
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
@@ -95,7 +110,7 @@ export default function PortfolioPage() {
             Portfolio focus
           </p>
           <div className="mt-5 grid gap-3">
-            {["ROS 2 / rclpy / Nav2", "Web UI -> rosbridge -> /cmd_vel", "LangGraph / RAG / Evaluator", "React / FastAPI / Linux deployment"].map((item) => (
+            {["ROS 2 / rclpy / Nav2", "Web UI -> rosbridge -> /cmd_vel", "AI data workflow / evaluation", "React / FastAPI / Linux deployment"].map((item) => (
               <div key={item} className="rounded border border-text-primary/10 bg-bg px-4 py-3 text-sm text-text-secondary">
                 {item}
               </div>
@@ -189,14 +204,22 @@ export default function PortfolioPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20">
         <p className="text-xs font-sans font-semibold tracking-widest text-accent uppercase">
-          AI Systems Supporting Robotics
+          Internship And AI Systems
         </p>
         <h2 className="mt-3 text-3xl font-serif font-semibold text-text-primary sm:text-5xl">
-          AI Agent 与 RAG 项目
+          企业实习与 AI 系统项目
         </h2>
+        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-text-secondary">
+          这部分重点展示我在企业实习和工程项目中做过的 AI 系统工作，强调职责、可验证项目背景和工程产出。
+        </p>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {aiProjects.map((project) => (
-            <article key={project.title} className="rounded border border-text-primary/10 bg-white/60 p-5">
+          {aiProjects.map((project, index) => (
+            <article
+              key={project.title}
+              className={`rounded border border-text-primary/10 bg-white/60 p-5 ${
+                index === 0 ? "md:col-span-3" : ""
+              }`}
+            >
               <p className="text-xs font-sans font-semibold tracking-widest text-accent uppercase">
                 {project.label}
               </p>
@@ -206,6 +229,31 @@ export default function PortfolioPage() {
               <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                 {project.description}
               </p>
+              {project.facts.length > 0 && (
+                <ul className="mt-6 grid gap-3 border-t border-text-primary/10 pt-5 md:grid-cols-3">
+                  {project.facts.map((fact) => (
+                    <li key={fact} className="text-sm leading-relaxed text-text-secondary">
+                      {fact}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {project.links.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded border border-text-primary/10 px-3 py-2 text-sm text-text-primary hover:border-accent/50 hover:text-accent"
+                    >
+                      {link.label}
+                      <ArrowUpRight size={14} />
+                    </a>
+                  ))}
+                </div>
+              )}
             </article>
           ))}
         </div>

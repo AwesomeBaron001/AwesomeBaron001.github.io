@@ -55,7 +55,7 @@ export function Projects() {
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-text-secondary">
               如果你想快速了解我的机器人方向能力，可以从这里查看 Scout Dog Walk、6gogo MVP、
-              AI Agent / RAG 项目、演示视频和简历下载。
+              联想实习项目、AI 系统工程经验、演示视频和简历下载。
             </p>
             <a
               href={siteConfig.portfolioUrl}
