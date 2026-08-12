@@ -10,18 +10,25 @@ export function Nav() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <a href="/" className="text-lg font-serif font-semibold text-text-primary">
           {siteConfig.name}
         </a>
 
         {/* Desktop */}
-        <ul className="hidden gap-8 md:flex">
+        <ul className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li
+              key={link.href}
+              className={link.priority === "secondary" ? "ml-1 border-l border-text-primary/10 pl-5 first:border-0" : ""}
+            >
               <a
                 href={link.href}
-                className="text-sm text-text-secondary hover:text-accent"
+                className={
+                  link.priority === "secondary"
+                    ? "text-xs text-text-secondary/75 hover:text-accent"
+                    : "text-sm text-text-secondary hover:text-accent"
+                }
                 {...(link.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
               >
                 {link.label}
@@ -54,7 +61,11 @@ export function Nav() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-text-secondary hover:text-accent"
+                    className={
+                      link.priority === "secondary"
+                        ? "text-xs text-text-secondary/75 hover:text-accent"
+                        : "text-sm text-text-secondary hover:text-accent"
+                    }
                     onClick={() => setMobileOpen(false)}
                     {...(link.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
                   >

@@ -9,6 +9,7 @@ export interface SiteConfig {
 export interface NavLink {
   label: string;
   href: string;
+  priority?: "primary" | "secondary";
 }
 
 export interface Project {
@@ -54,12 +55,13 @@ export const siteConfig: SiteConfig = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "关于", href: "#about" },
-  { label: "项目", href: "#projects" },
-  { label: "作品集", href: "https://awesomebaron001.github.io/portfolio/" },
-  { label: "博客", href: "https://blog.csdn.net/m0_46464899" },
-  { label: "Build Log", href: "#buildlog" },
-  { label: "联系", href: "#contact" },
+  { label: "Home", href: "/", priority: "primary" },
+  { label: "Robotics", href: "/portfolio/#robotics", priority: "primary" },
+  { label: "AI Systems", href: "/portfolio/#ai-systems", priority: "primary" },
+  { label: "GitHub", href: "https://github.com/AwesomeBaron001", priority: "primary" },
+  { label: "Contact", href: "/portfolio/#contact", priority: "primary" },
+  { label: "Blog", href: "https://blog.csdn.net/m0_46464899", priority: "secondary" },
+  { label: "Build Log", href: "/#buildlog", priority: "secondary" },
 ];
 
 export const aboutText: string =
