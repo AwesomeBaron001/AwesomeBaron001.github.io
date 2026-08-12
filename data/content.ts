@@ -75,6 +75,68 @@ export const focuses: string[] = [
 
 export const projects: Project[] = [
   {
+    name: "香港 Physical AI 黑客松 · 四自由度主动式下肢外骨骼",
+    shortName: "外骨骼机器人",
+    description:
+      "团队在香港 Physical AI 黑客松中完成四自由度主动式下肢外骨骼，并获得 Alloop 赛道冠军。我负责可穿戴传感器数据接入、K3 / ROS 2 遥测集成及机器人 Web 交互系统开发。",
+    year: "2026.08",
+    url: "https://b23.tv/wL4oHEi",
+    tech: ["ROS 2 Humble", "RISC-V", "BLE GATT", "FastAPI", "WebSocket"],
+    status: [
+      "Alloop 赛道冠军",
+      "团队完成四自由度主动式下肢外骨骼原型",
+      "个人负责传感器接入、机器人遥测与 Web 交互系统",
+    ],
+    links: [
+      {
+        label: "B站视频：外骨骼机器人团队项目",
+        href: "https://b23.tv/wL4oHEi",
+        kind: "video",
+      },
+      {
+        label: "小红书项目记录",
+        href: "https://xhslink.cn/o/1n0vdnV1D1i",
+        kind: "article",
+      },
+    ],
+    visual: {
+      title: "香港 Physical AI 黑客松 Alloop 赛道冠军团队",
+      caption: "香港 Physical AI 黑客松颁奖现场，外骨骼机器人团队获得 Alloop 赛道冠军。",
+      image: "/physical-ai-hackathon.jpg",
+    },
+  },
+  {
+    name: "北京探月 Physical AI 黑客松 · 拥抱机器人",
+    shortName: "拥抱机器人",
+    description:
+      "在北京探月 Physical AI 黑客松的 48 小时开发周期内完成拥抱机器人原型，探索机器人从执行指令走向温暖、自然的情感交互。",
+    year: "2026.07",
+    url: "https://wap.cyol.com/videoDetail/1415118?from=QRCODE",
+    tech: ["Physical AI", "Robotics", "Human–Robot Interaction", "Rapid Prototyping"],
+    status: [
+      "项目获得中国青年报现场采访",
+      "探月官方小红书专题报道",
+      "48 小时完成可现场展示的拥抱机器人原型",
+    ],
+    links: [
+      {
+        label: "中国青年报采访视频",
+        href: "https://wap.cyol.com/videoDetail/1415118?from=QRCODE",
+        kind: "video",
+      },
+      {
+        label: "探月官方小红书：《机器人也会温暖抱抱》",
+        href: "https://xhslink.cn/o/5X2eXwvNsAy",
+        kind: "article",
+      },
+    ],
+    visual: {
+      title: "拥抱机器人项目团队",
+      caption: "北京探月 Physical AI 黑客松现场，团队与拥抱机器人合影。",
+      image: "/moonshot-hackathon.jpg",
+    },
+  },
+  {
     name: "6gogo_scout_mini",
     shortName: "6gogo",
     description:
@@ -85,7 +147,6 @@ export const projects: Project[] = [
     status: [
       "黑客松获奖项目",
       "入围通往 AGI 之路 x 红杉中国 AGI HOUSE 线上孵化营",
-      "深圳科创学院夏令营已通过一面，二面进行中",
     ],
     links: [
       {
@@ -139,6 +200,18 @@ export const projects: Project[] = [
 ];
 
 export const buildLog: BuildLogEntry[] = [
+  {
+    date: "2026.08",
+    title: "香港 Physical AI 黑客松 Alloop 赛道冠军",
+    description: "团队完成四自由度主动式下肢外骨骼并获得 Alloop 赛道冠军；我负责可穿戴传感器接入、K3 / ROS 2 遥测集成及 Web 交互系统。",
+    link: "https://b23.tv/wL4oHEi",
+  },
+  {
+    date: "2026.07",
+    title: "北京探月 Physical AI 黑客松 · 拥抱机器人",
+    description: "在 48 小时内完成拥抱机器人原型，探索温暖的人机交互；项目获得中国青年报采访和探月官方报道。",
+    link: "https://wap.cyol.com/videoDetail/1415118?from=QRCODE",
+  },
   {
     date: "2026-06",
     title: "6gogo_scout_mini 黑客松获奖",

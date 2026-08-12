@@ -34,7 +34,7 @@ export function Projects() {
             项目
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary">
-            目前重点展示两个黑客松项目：一个基于松灵 Scout Mini 底盘机器人探索无人遛狗，另一个把微信读书笔记转成 Obsidian 里的阅读续航工具。
+            展示我在机器人控制、Physical AI 与阅读工具方向完成的黑客松作品。每个项目都包含原型成果、外部报道或演示证据。
           </p>
         </motion.div>
 
@@ -99,6 +99,12 @@ export function Projects() {
                   <span className="font-serif text-2xl font-semibold text-text-primary">
                     {project.shortName}
                   </span>
+                  {project.status[0]?.includes("冠军") && (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/[0.08] px-2.5 py-1 text-xs font-semibold text-accent">
+                      <Award size={13} aria-hidden="true" />
+                      {project.status[0]}
+                    </span>
+                  )}
                   <span className="rounded-full border border-text-primary/10 px-2.5 py-1 text-xs font-sans text-text-secondary">
                     {project.year}
                   </span>
