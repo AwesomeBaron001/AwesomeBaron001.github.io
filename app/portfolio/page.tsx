@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, Phone, Play } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "机器人软件与具身智能工程作品集｜赵红利",
@@ -229,28 +229,35 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded border border-text-primary/10 bg-[#181816] p-6 text-white shadow-inner sm:p-7">
-              <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full border border-accent/20" />
-              <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full border border-accent/30" />
-              <p className="text-xs font-sans font-semibold tracking-widest text-accent uppercase">Camera Motion System</p>
-              <div className="mt-8 grid grid-cols-3 gap-2 text-center font-sans">
-                {["±X", "±Y", "±Z"].map((axis) => (
-                  <div key={axis} className="rounded border border-white/15 bg-white/[0.04] py-4">
-                    <span className="text-xl font-medium">{axis}</span>
-                    <p className="mt-1 text-[10px] tracking-wider text-white/50 uppercase">Cartesian</p>
+            <a
+              href="https://xhslink.cn/o/5Fp1EchC8XP"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="在小红书观看乐园跟拍机器人项目视频"
+              className="group relative flex aspect-[4/3] min-h-[300px] overflow-hidden rounded border border-text-primary/10 bg-[#181816] p-6 text-white shadow-inner sm:p-7"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(200,169,126,0.38),transparent_30%),linear-gradient(145deg,#28251f_0%,#11110f_62%,#201b17_100%)]" />
+              <div className="absolute -right-14 -top-20 h-64 w-64 rounded-full border border-accent/20 transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute -right-2 -top-7 h-36 w-36 rounded-full border border-accent/30 transition-transform duration-500 group-hover:scale-110" />
+              <div className="relative z-10 flex w-full flex-col justify-between">
+                <div className="flex items-center justify-between gap-4 font-sans">
+                  <span className="text-xs font-semibold tracking-widest text-accent uppercase">Project Film</span>
+                  <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] text-white/80 backdrop-blur">小红书观看</span>
+                </div>
+                <div className="flex items-center justify-center py-5">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/35 bg-white/15 shadow-[0_10px_35px_rgba(0,0,0,0.3)] backdrop-blur transition-transform duration-300 group-hover:scale-110">
+                    <Play size={24} className="ml-1 fill-white" aria-hidden="true" />
+                  </span>
+                </div>
+                <div>
+                  <p className="text-3xl font-serif font-semibold">来看看我们的卡洛吧！</p>
+                  <div className="mt-4 flex items-end justify-between gap-4 border-t border-white/15 pt-4 font-sans">
+                    <div><strong className="text-sm font-medium text-accent">A3 × Insta360 X4</strong><p className="mt-1 text-[10px] tracking-wider text-white/45 uppercase">Autonomous camera motion</p></div>
+                    <ArrowUpRight size={18} className="text-white/65 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                   </div>
-                ))}
+                </div>
               </div>
-              <div className="mt-3 grid grid-cols-3 gap-2 text-center font-sans">
-                {["Roll", "Pitch", "Yaw"].map((axis) => (
-                  <div key={axis} className="rounded border border-white/10 py-3 text-xs text-white/70">{axis}</div>
-                ))}
-              </div>
-              <div className="mt-8 flex items-end justify-between border-t border-white/10 pt-5 font-sans">
-                <div><strong className="text-2xl font-medium text-accent">100 Hz</strong><p className="mt-1 text-[10px] tracking-wider text-white/45 uppercase">Joint trajectory</p></div>
-                <div className="text-right"><strong className="text-2xl font-medium text-accent">7-DoF</strong><p className="mt-1 text-[10px] tracking-wider text-white/45 uppercase">Arm model</p></div>
-              </div>
-            </div>
+            </a>
           </div>
 
           <div className="mt-8 grid gap-px overflow-hidden rounded border border-text-primary/10 bg-text-primary/10 md:grid-cols-3">
