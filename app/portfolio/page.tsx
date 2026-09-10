@@ -9,6 +9,23 @@ export const metadata: Metadata = {
 
 const roboticsProjects = [
   {
+    label: "2026.09 · Core Developer · Award-winning Hardware Project",
+    title: "基于智元远征 A3 的乐园跟拍机器人",
+    description:
+      "面向主题乐园游客与 NPC 互动场景，基于智元远征 A3 人形机器人开发自主运镜系统。通过灵巧手稳定握持 Insta360 X4 全景相机，控制机械臂完成多方向移动与腕部姿态调整，实现对话过程中的动态跟拍和视频录制。",
+    tech: ["Python", "ROS 2", "rclpy", "Pinocchio", "Inverse Kinematics", "URDF", "智元远征 A3", "Insta360 X4"],
+    facts: [
+      "机械臂运动控制与逆运动学：基于 ROS 2 搭建 A3 双臂关节状态订阅与指令发布链路，使用 Pinocchio 和 URDF 构建 7 自由度机械臂模型；实现分阶段阻尼最小二乘 IK、零空间参考姿态优化、关节限位及 Cartesian Waypoint 连续求解，支持相机前后、左右、升降和定点移动。",
+      "平滑运镜与实机误差修正：采用五次多项式插值生成 100 Hz 平滑关节轨迹，支持末端位置与腕部 Roll / Pitch / Yaw 独立控制；结合安全工作空间校验、重力位置前馈和最多两轮闭环到位修正，提升大范围运镜过程的平顺性与末端定位稳定性。",
+      "灵巧手相机抓持与控制保活：针对 Insta360 X4 握持需求标定双手多关节 PWM 开合参数，开发张手、闭合、抓握和持续保持动作；设计机械臂与灵巧手并行 Keepalive 机制，以手部 30 Hz、机械臂 10 Hz 持续发布控制指令，避免拍摄过程中手指回弹和手臂下垂。",
+    ],
+    links: [
+      { label: "项目视频 · 小红书", href: "https://xhslink.cn/o/5Fp1EchC8XP" },
+    ],
+    image: undefined,
+    imageAlt: undefined,
+  },
+  {
     label: "2026.08 · Core Developer · Alloop Track Winner",
     title: "四自由度主动式下肢外骨骼机器人",
     description:
@@ -151,9 +168,9 @@ export default function PortfolioPage() {
           <div className="mt-5 grid gap-3">
             {[
               "ROS 2 · rclpy · Topic / Node / Launch",
+              "Pinocchio · IK · URDF · Trajectory Planning",
               "Robot SDK · Sensor Integration · BLE",
-              "FastAPI · WebSocket · Web Cockpit",
-              "Linux · RISC-V · Edge Deployment",
+              "Linux · Edge Deployment · Web Cockpit",
             ].map((item) => (
               <div key={item} className="rounded border border-text-primary/10 bg-bg px-4 py-3 text-sm leading-6 text-[#57534e]">
                 {item}
@@ -165,9 +182,9 @@ export default function PortfolioPage() {
 
       <section aria-label="Portfolio statistics" className="mx-auto grid max-w-6xl gap-px px-6 pb-14 md:grid-cols-3">
         {[
-          { metric: "4", label: "Real Robot Projects", detail: "Exoskeleton / G1 / Scout / 6gogo" },
-          { metric: "3", label: "Hardware Platforms", detail: "K3 / G1 / Scout Mini" },
-          { metric: "2×", label: "Hackathon Awards", detail: "Alloop Winner / Scout Track 2nd" },
+          { metric: "5", label: "Real Robot Projects", detail: "A3 / Exoskeleton / G1 / Scout / 6gogo" },
+          { metric: "4", label: "Hardware Platforms", detail: "A3 / K3 / G1 / Scout Mini" },
+          { metric: "3", label: "Awarded Builds", detail: "SHENICEST / Alloop / Scout" },
         ].map(({ metric, label, detail }) => (
           <div key={metric} className="border border-text-primary/10 bg-white/60 p-6">
             <span className="font-serif text-4xl text-accent">{metric}</span>
@@ -191,9 +208,9 @@ export default function PortfolioPage() {
         <article className="mt-10 rounded border border-accent/45 bg-white/80 p-6 shadow-[0_18px_50px_rgba(26,26,26,0.06)] md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="inline-flex rounded-full border border-accent/45 bg-accent/[0.09] px-3 py-1.5 text-xs font-sans font-semibold text-accent">
-              Physical AI Hackathon · Alloop Track Winner
+              SHENICEST Hackathon · Hardware Track 3rd
             </span>
-            <span className="text-xs font-sans tracking-widest text-[#57534e] uppercase">2026.08 · Team Project</span>
+            <span className="text-xs font-sans tracking-widest text-[#57534e] uppercase">2026.09 · Core Developer</span>
           </div>
 
           <div className="mt-7 grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-start">
@@ -203,9 +220,6 @@ export default function PortfolioPage() {
                 {flagshipProject.title}
               </h3>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-[#57534e]">{flagshipProject.description}</p>
-              <p className="mt-3 max-w-2xl text-xs leading-6 text-[#57534e]">
-                个人工作聚焦遥测、传感器与 Web 交互链路；团队项目中的强化学习不列为个人职责。
-              </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {flagshipProject.tech.map((item) => (
                   <span key={item} className="rounded-full border border-text-primary/10 bg-bg px-2.5 py-1 text-xs font-sans text-[#57534e]">
@@ -215,33 +229,43 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <figure>
-              <iframe
-                title="在 Physical AI 黑客松我们做了一个四自由度强化学习外骨骼——Alloop 赛道冠军"
-                src="https://player.bilibili.com/player.html?bvid=BV1uuu36uEjx&page=1&high_quality=1&danmaku=0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                className="aspect-video w-full rounded border border-text-primary/10 bg-text-primary/5"
-              />
-              <figcaption className="mt-2 text-xs leading-5 text-[#57534e]">
-                外骨骼机器人项目演示 · Bilibili
-              </figcaption>
-            </figure>
+            <div className="relative overflow-hidden rounded border border-text-primary/10 bg-[#181816] p-6 text-white shadow-inner sm:p-7">
+              <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full border border-accent/20" />
+              <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full border border-accent/30" />
+              <p className="text-xs font-sans font-semibold tracking-widest text-accent uppercase">Camera Motion System</p>
+              <div className="mt-8 grid grid-cols-3 gap-2 text-center font-sans">
+                {["±X", "±Y", "±Z"].map((axis) => (
+                  <div key={axis} className="rounded border border-white/15 bg-white/[0.04] py-4">
+                    <span className="text-xl font-medium">{axis}</span>
+                    <p className="mt-1 text-[10px] tracking-wider text-white/50 uppercase">Cartesian</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 grid grid-cols-3 gap-2 text-center font-sans">
+                {["Roll", "Pitch", "Yaw"].map((axis) => (
+                  <div key={axis} className="rounded border border-white/10 py-3 text-xs text-white/70">{axis}</div>
+                ))}
+              </div>
+              <div className="mt-8 flex items-end justify-between border-t border-white/10 pt-5 font-sans">
+                <div><strong className="text-2xl font-medium text-accent">100 Hz</strong><p className="mt-1 text-[10px] tracking-wider text-white/45 uppercase">Joint trajectory</p></div>
+                <div className="text-right"><strong className="text-2xl font-medium text-accent">7-DoF</strong><p className="mt-1 text-[10px] tracking-wider text-white/45 uppercase">Arm model</p></div>
+              </div>
+            </div>
           </div>
 
           <div className="mt-8 grid gap-px overflow-hidden rounded border border-text-primary/10 bg-text-primary/10 md:grid-cols-3">
             {[
               {
-                title: "My Role",
-                items: ["K3 / ROS 2 Telemetry Integration", "Alloop Ring Data Pipeline", "Web Cockpit & Cross-device Bridge"],
+                title: "Motion Control",
+                items: ["Damped Least-Squares IK", "Null-space posture optimization", "Cartesian waypoint solving"],
               },
               {
-                title: "System",
-                items: ["Alloop Ring → Android SDK → WebSocket → PC", "4× IMU → ROS 2 → K3 → FastAPI → Web Cockpit"],
+                title: "Smooth & Safe",
+                items: ["100 Hz quintic trajectories", "Workspace & joint-limit checks", "Gravity feedforward + closed-loop correction"],
               },
               {
-                title: "Key Engineering",
-                items: ["4× sensor_msgs/Imu", "Thread-safe telemetry cache", "BLE GATT real-time data", "ROS 2 Mock Node / safety validation"],
+                title: "Reliable Grasp",
+                items: ["Insta360 X4 PWM calibration", "Hand keepalive · 30 Hz", "Arm keepalive · 10 Hz"],
               },
             ].map((block) => (
               <div key={block.title} className="bg-bg p-5">
@@ -253,6 +277,28 @@ export default function PortfolioPage() {
                 </ul>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 border-t border-text-primary/10 pt-7">
+            <p className="text-xs font-sans font-semibold tracking-widest text-accent uppercase">Engineering Details</p>
+            <ul className="mt-5 grid gap-5 lg:grid-cols-3">
+              {flagshipProject.facts.map((fact, index) => {
+                const [heading, detail] = fact.split("：");
+                return (
+                  <li key={fact} className="text-sm leading-7 text-[#57534e]">
+                    <span className="mb-2 block font-sans text-xs font-semibold text-text-primary">
+                      {String(index + 1).padStart(2, "0")} · {heading}
+                    </span>
+                    {detail}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          <div className="mt-6 rounded border border-accent/30 bg-accent/[0.07] px-5 py-4">
+            <p className="text-xs font-sans font-semibold tracking-widest text-accent uppercase">Project Results</p>
+            <p className="mt-2 text-sm leading-7 text-text-primary">北京 SHENICEST 千人黑客松硬件赛道三等奖 · 智元赛题第一名 · 影石 Insta360 赛题第二名</p>
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3">
